@@ -10,14 +10,14 @@ vector<int> compute_next(string& pattern)
         int i = k-1;//fetch its neighbor's pos
         int x = rewind_pos[i];
         //we have to squeeze the previous common part to find the new one
-        //when the subsequent comparison failure
+        //once the subsequent comparison fails
         while(pattern[k]!= pattern[x])
         {
             i= x-1;
             if(i<0)break;
             x= rewind_pos[i];
         }
-        //otherwise we can expand current common part by including kth character
+        //otherwise we can expand current common part by including xth character
         rewind_pos[k]= (i<0)? 0 : rewind_pos[i]+1;
     }
     return rewind_pos;
