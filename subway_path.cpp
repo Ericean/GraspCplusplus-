@@ -12,9 +12,10 @@ struct Edge{
     friend ostream& operator<<(ostream& os, const Edge& e){ os<< e.from<<"->"<<e.to<<": "<<e.days<<endl;return os;}
 };
 vector<Edge> es;
-vector<int> index;
+
 
 /*quick union and find implementation*/ 
+vector<int> index;
 int _root(int e)
 {
     if(e== index[e])return e;
