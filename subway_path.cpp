@@ -3,12 +3,6 @@
 #include <algorithm>
 
 using namespace std;
-class Foo{
-public:
-    int a;
-    double b;
-    friend ostream& operator<<(ostream& os, const Foo& f){os<<"a: "<<f.a<<"b: "<<f.b<<endl;return os;}
-};
 
 struct Edge{
     int from,to,days;
@@ -19,6 +13,8 @@ struct Edge{
 };
 vector<Edge> es;
 vector<int> index;
+
+/*quick union and find implementation*/ 
 int _root(int e)
 {
     if(e== index[e])return e;
