@@ -13,6 +13,8 @@ bool augment(bool Graph[M][N], int col, int u, bool visited[], int matched[])
 		if (Graph[u][v] && !visited[v]) {
 			visited[v] = true;
 			if (matched[v] == NOMATCH  || augment(Graph, col, matched[v], visited, matched)) {
+				//if we find a job availble or we have find a augmenting solution
+				//then we revise the owenr of job v
 				matched[v] = u;
 				return true;
 			}
